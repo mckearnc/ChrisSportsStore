@@ -1,15 +1,14 @@
-﻿@using SportsStore.Domain.Entities 
-@model IEnumerable<Product>
+﻿@using SportsStore.Domain.Entities
+@model SportsStore.WebUI.Models.ProductsListViewModel
+@{
+    ViewBag.Title = "Products";
+}
 
-@{ 
-    ViewBag.Title = "Products"; 
-    }
 
-
-@foreach (var p in Model)
-{<div>        
-    <h3>@p.Name</h3>        
-    @p.Description        
-    <h4>@p.Price.ToString("c")</h4>    
+@foreach (var p in Model.Products)
+{<div>
+        <h3>@p.Name</h3>
+        @p.Description
+        <h4>@p.Price.ToString("c")</h4>
     </div>
 }
